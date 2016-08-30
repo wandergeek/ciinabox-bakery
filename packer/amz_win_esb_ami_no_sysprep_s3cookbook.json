@@ -57,7 +57,7 @@
       ],
       "environment_vars": [
         "CHEF_RUN_LIST={{user `chef_run_list`}}",
-        "S3_BUCKET={{user `s3_bucket`}}",
+        "SOURCE_BUCKET={{user `source_bucket`}}",
         "REGION={{user `region`}}"
       ]
     }
@@ -75,7 +75,7 @@
     "build_id": "",
     "build_sha": "",
     "chef_run_list":"",
-    "s3_bucket":"",
+    "source_bucket":"",
     "ami_regions":"",
     "ami_users":"",
     "packer_role":"packer",

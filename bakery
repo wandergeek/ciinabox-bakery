@@ -75,7 +75,7 @@ if [[ ! x${11} == "x" ]]; then
 fi
 
 if [[ ! x${SOURCE_BUCKET} == "x" ]]; then
-  CLI_OPTS="${CLI_OPTS} -var s3_bucket=${SOURCE_BUCKET}"
+  CLI_OPTS="${CLI_OPTS} -var source_bucket=${SOURCE_BUCKET}"
   log info "using s3 bucket ${SOUCE_BUCKET}"
 fi
 
