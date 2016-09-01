@@ -39,6 +39,18 @@
   }],
   "provisioners": [
     {
+      "type": "powershell",
+      "scripts": [
+        "scripts/set_ec2_config.ps1",
+        "scripts/setupwindows.ps1",
+        "scripts/download_cookbooks.ps1"
+      ],
+      "environment_vars": [
+        "SOURCE_BUCKET={{user `source_bucket`}}",
+        "REGION={{user `region`}}"
+      ]
+    },
+    {
       "type": "chef-client",
       "guest_os_type": "windows",
       "config_template": "packer/templates/chef-client-win.tpl",
@@ -55,29 +67,6 @@
           "app_build_sha": "{{user `build_sha`}}"
         }
       }
-    },
-    {
-      "type": "powershell",
-      "inline": [
-        "New-Item c:/chef/cookbooks -type directory -force",
-        "New-Item c:/chef/data_bags -type directory -force",
-        "New-Item c:/chef/environments -type directory -force",
-        "New-Item c:/chef/encrypted_data_bag_secret -type directory -force"
-      ]
-    },
-    {
-      "type": "powershell",
-      "scripts": [
-        "scripts/setupwindows.ps1",
-        "scripts/download_cookbooks.ps1",
-        "scripts/set_ec2_config.ps1",
-        "scripts/run_chef.ps1"
-      ],
-      "environment_vars": [
-        "CHEF_RUN_LIST={{user `chef_run_list`}}",
-        "SOURCE_BUCKET={{user `source_bucket`}}",
-        "REGION={{user `region`}}"
-      ]
     }
   ],
   "variables": {
