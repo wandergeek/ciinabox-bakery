@@ -68,9 +68,9 @@
     {
       "type": "powershell",
       "scripts": [
-        "scripts/set_ec2_config.ps1",
         "scripts/setupwindows.ps1",
         "scripts/download_cookbooks.ps1",
+        "scripts/set_ec2_config.ps1",
         "scripts/run_chef.ps1"
       ],
       "environment_vars": [
