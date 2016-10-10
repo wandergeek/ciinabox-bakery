@@ -29,6 +29,7 @@
       "type": "shell",
       "inline": [
        "sudo yum -y install openssh-server",
+       "sleep 30", 
        "sudo /sbin/service docker start",
        "sudo /sbin/chkconfig sshd on",
        "sudo /sbin/chkconfig docker on",
