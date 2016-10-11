@@ -46,7 +46,7 @@
   "variables": {
     "access_key": "",
     "secret_key": "",
-    "client": "{{ env client }}",
+    "client": "{{ env `client` }}",
     "source_ami": "",
     "ami_name":"",
     "vpc_id": "",
