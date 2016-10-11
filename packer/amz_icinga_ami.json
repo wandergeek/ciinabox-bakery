@@ -24,9 +24,9 @@
       "Status": "Baked"
     }
   }],
-  "environment_vars": [ "client={{user `client`}" ],
   "provisioners": [
     {
+      "environment_vars": [ "client={{user `client`}" ],
       "type": "shell",
       "inline": [
        "sudo yum -y install openssh-server",
