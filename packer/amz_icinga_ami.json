@@ -3,6 +3,7 @@
     "type": "amazon-ebs",
     "region": "{{ user `region` }}",
     "source_ami": "{{ user `source_ami` }}",
+    "client": "{{ user `client` }}",
     "instance_type": "{{ user `instance_type` }}",
     "iam_instance_profile":"{{ user `packer_instance_profile`}}",
     "ami_name": "{{ user `client`}}-{{ user `ami_name` }}-{{ user `build_no` }}",
@@ -45,7 +46,6 @@
   ],
   "variables": {
     "access_key": "",
-    "client": "{{ user `client` }}",
     "secret_key": "",
     "source_ami": "",
     "ami_name":"",
