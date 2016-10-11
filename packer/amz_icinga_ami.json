@@ -24,6 +24,7 @@
       "Status": "Baked"
     }
   }],
+  "environment_vars": [ "client={{user `client`}" ],
   "provisioners": [
     {
       "type": "shell",
@@ -33,7 +34,7 @@
        "sudo /sbin/service docker start",
        "sudo /sbin/chkconfig sshd on",
        "sudo /sbin/chkconfig docker on",
-       "sudo aws --region ap-southeast-2 s3 cp s3://source.ci.base2.services/containers/{{ user client }}/icinga2/latest/icinga2.tar /usr/src",      
+       "sudo aws --region ap-southeast-2 s3 cp s3://source.ci.base2.services/containers/$client/icinga2/latest/icinga2.tar /usr/src",      
        "sudo docker load < /usr/src/icinga2.tar"
       ]
     },
