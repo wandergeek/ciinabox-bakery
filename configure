@@ -7,6 +7,7 @@
 # base2Services <itsupport@base2services.com>
 #
 set -e
+set -x
 
 [ -r /etc/environment ] && . /etc/environment
 
@@ -43,3 +44,5 @@ cat <<EOT > ${SCRIPT_PATH}/base_params.json
   "ami_users": "${AMI_USERS}"
 }
 EOT
+
+cat ${SCRIPT_PATH}/base_params.json
