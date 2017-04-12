@@ -53,7 +53,7 @@
     {
       "type": "chef-client",
       "guest_os_type": "windows",
-      "install_command": "powershell.exe -Command '({ iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel stable -project chef -version 12.19.36)'",
+      "install_command": ". { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel stable -project chef -version 12.19.36",
       "config_template": "packer/templates/chef-client-win.tpl",
       "skip_install": false,
       "skip_clean_node": true,
