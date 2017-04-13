@@ -53,8 +53,7 @@
     {
       "type": "chef-client",
       "guest_os_type": "windows",
-      "install_command": ". { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel stable -project chef -version 12.19.36",
-      "config_template": "packer/templates/chef-client-win.tpl",
+      "install_command": "powershell.exe -Command \"(New-Object System.Net.WebClient).DownloadFile('https://packages.chef.io/files/stable/chef/12.19.36/windows/2012/chef-client-12.19.36-1-x64.msi', 'C:\\Windows\\Temp\\chef.msi');Start-Process 'msiexec' -ArgumentList '/qb /i C:\\Windows\\Temp\\chef.msi' -NoNewWindow -Wait\"",
       "skip_install": false,
       "skip_clean_node": true,
       "skip_clean_client": true,
