@@ -59,6 +59,7 @@
       "skip_clean_client": true,
       "server_url": "http://localhost:8889",
       "ssl_verify_mode": "verify_none",
+      "config_template": "packer/templates/chef-client-win.tpl",
       "node_name": "{{user `client`}}-packer-{{user `ami_name`}}-{{uuid}}",
       "run_list": [ "{{user `chef_run_list`}}" ],
       "json": {
